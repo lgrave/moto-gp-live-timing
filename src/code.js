@@ -1,6 +1,23 @@
 // This function replaces the officiall function fillData() on the MotoGP website
 // This an initial proof of concept
 
+// Replace the header of the live timing widget with the following HTML:
+/*
+<tr>
+    <th class="th_40">POS</th>
+    <th class="th_40">#</th>
+    <th class="th_rider_name">RIDER</th>
+    <th class="th_40">Fastest</th>
+    <th class="th_40">Lap</th>
+    <th class="gap">GAP</th>
+    <th class="th_40">Last lap</th>
+    <th class="th_40">Pit</th>
+</tr>
+*/
+
+
+
+
 function fillData(e) {
     var t, a = (void 0 !== e.event_bar && void 0 !== e.event_bar.tkid ? e.event_bar.tkid : e.lt.head.circuit_id,
     void 0 !== e.lt.head.calendar_event_track ? e.lt.head.calendar_event_track : ""), n = void 0 !== e.event_bar && void 0 !== e.event_bar.category ? e.event_bar.category : e.lt.head.category, s = null !== e.lt ? e.lt.head.session_name : "", i = null !== e.lt ? e.lt.head.session_status_name.toLowerCase() : "", d = null !== e.lt ? Number(e.lt.head.session_type) : "", r = null !== e.lt && "f" != i, o = void 0 !== e.event_bar && void 0 !== e.event_bar.shortname ? e.event_bar.shortname : e.lt.head.event_shortname, l = void 0 !== e.event_bar && void 0 !== e.event_bar.event_name ? e.event_bar.event_name : e.lt.head.event_tv_name, c = void 0 !== e.event_bar && void 0 !== e.event_bar.test_results_url ? e.event_bar.test_results_url : e.lt.head.url, v = void 0 !== e.event_bar && void 0 !== e.event_bar.current_session ? e.event_bar.current_session : e.lt.head.session_name, h = void 0 !== e.event_bar && void 0 !== e.event_bar.next_session ? e.event_bar.next_session : e.lt.head.session_name, m = null !== e.lt ? e.lt.head.circuit_name : e.event_bar.circuit_name, u = e.lt.head.remaining, _ = get_lt_link(i, c, trid), f = e.lt.head.url, g = !1;
